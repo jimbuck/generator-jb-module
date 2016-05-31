@@ -1,0 +1,52 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%- description %>",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "postinstall": "typings install",
+    "preversion": "npm test",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= username %>/<%= name %>.git"
+  },
+  "author": "<%- author %>",
+  "license": "<%- license %>",
+  "bugs": {
+    "url": "https://github.com/<%= username %>/<%= name %>/issues"
+  },
+  "homepage": "https://github.com/<%= username %>/<%= name %>#readme",
+  "devDependencies": {
+    "ava": "^0.15.1",
+    "coveralls": "^2.11.9",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "nyc": "^6.4.4",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "yargs": "^4.7.1"
+  },
+  "dependencies": {},
+  "ava": {
+    "files": [
+      "./dist/**/*.spec.js"
+    ],
+    "source": [
+      "./dist/**/*.js"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "dist/**/*.js"
+    ],
+    "exclude": [
+      "dist/**/*.spec.js"
+    ]
+  }
+}

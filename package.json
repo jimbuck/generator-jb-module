@@ -1,0 +1,33 @@
+{
+  "name": "generator-jb-module",
+  "version": "0.0.1",
+  "description": "A super easy to use generator for rapidly making high quality node modules with Typescript and AVA.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimmyBoh/generator-jb-module.git"
+  },
+  "author": "Jim Buck <jim@jimmyboh.com>",
+  "bugs": {
+    "url": "https://github.com/JimmyBoh/generator-jb-module/issues"
+  },
+  "homepage": "https://github.com/JimmyBoh/generator-jb-module#readme",
+  "keywords": [
+    "yeoman-generator",
+    "typescript",
+    "ava",
+    "nyc",
+    "coveralls"
+  ],
+  "files": [
+    "generators/app"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.21.2"
+  },
+  "devDependencies": {
+    "typings": "^1.0.4"
+  }
+}
