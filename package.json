@@ -23,7 +23,10 @@
   "files": [
     "generators/app"
   ],
-  "scripts": {},
+  "scripts": {
+    "version": "git add -A",
+    "postversion": "git push && git push --tags && npm publish"
+  },
   "dependencies": {
     "mkdirp": "^0.5.1",
     "yeoman-generator": "^0.21.2"
