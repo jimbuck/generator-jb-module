@@ -29,12 +29,14 @@ module.exports = yeoman.generators.Base.extend({
         type: 'input',
         name: 'author',
         message: 'The primary author',
-        default: 'Jim Buck <jim@jimmyboh.com>'
+        default: 'Jim Buck <jim@jimmyboh.com>',
+        store: true
     }, {
         type: 'input',
         name: 'username',
         message: 'Your GitHub username',
-        default: 'JimmyBoh'
+        default: 'JimmyBoh',
+        store: true
     }, {
       type: 'list',
       name: 'license',
