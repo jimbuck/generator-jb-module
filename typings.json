@@ -1,8 +1,0 @@
-{
-  "name": "generator-jb-module",
-  "dependencies": {},
-  "globalDependencies": {
-    "yeoman-generator": "registry:dt/yeoman-generator#0.0.0+20160317120654",
-    "yosay": "registry:dt/yosay#0.0.0+20160316155526"
-  }
-}

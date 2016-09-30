@@ -4,9 +4,11 @@
   "description": "<%- description %>",
   "main": "index.js",
   "scripts": {
+    "clean": "gulp clean",
+    "rebuild": "gulp build",
+    "watch": "gulp watch",
     "test": "gulp test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "postinstall": "typings install",
     "preversion": "npm test",
     "version": "git add -A",
     "postversion": "git push && git push --tags && npm publish"
@@ -21,17 +23,7 @@
     "url": "https://github.com/<%= username %>/<%= name %>/issues"
   },
   "homepage": "https://github.com/<%= username %>/<%= name %>#readme",
-  "devDependencies": {
-    "ava": "^0.15.1",
-    "coveralls": "^2.11.9",
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.5.2",
-    "nyc": "^6.4.4",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4",
-    "yargs": "^4.7.1"
-  },
+  "devDependencies": {},
   "dependencies": {},
   "ava": {
     "files": [

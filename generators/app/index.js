@@ -7,15 +7,15 @@ var mkdirp = require('mkdirp');
 
 var paths = {
   src: 'src/',
-  dist: 'dist/'
+  dist: 'dist/',
+  vscode: '.vscode/'
 };
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   // Configurations will be loaded here.
   // Ask for user input
   prompting: function () {
-    var done = this.async();
-    this.prompt([{
+    return this.prompt([{
       type: 'input',
       name: 'name',
       message: 'The project name',
@@ -52,10 +52,9 @@ module.exports = yeoman.generators.Base.extend({
         value: 'GPL-3.0'
       }],
       default: 'MIT'
-    }], function (answers) {
+    }]).then(answers => {
       this.props = answers;
-      done();
-    }.bind(this));
+    });
   },
 
   // Writing Logic here
@@ -64,12 +63,20 @@ module.exports = yeoman.generators.Base.extend({
     folders: function () {     
       mkdirp.sync(paths.src);
       mkdirp.sync(paths.dist);
+      mkdirp.sync(paths.vscode);
     },
 
     // Copy the configuration files
     config: function () {
 
-      ['package.json', 'typings.json', 'tsconfig.json', 'README.md', 'index.js'].forEach(function (path) {
+      ['settings.json'].forEach(function (path) {
+        this.fs.copy(
+          this.templatePath(paths.vscode + '_' + path),
+          this.destinationPath(paths.vscode + path)
+        );
+      }.bind(this));
+
+      ['package.json', 'tsconfig.json', 'README.md', 'index.js'].forEach(function (path) {
         this.fs.copyTpl(
           this.templatePath('_' + path),
           this.destinationPath(path),
@@ -77,7 +84,7 @@ module.exports = yeoman.generators.Base.extend({
         );
       }.bind(this));
 
-      ['gulpfile.js', '.gitignore', '.travis.yml', '_references.d.ts', '.npmignore'].forEach(function (path) {
+      ['gulpfile.js', '.gitignore', '.travis.yml', '.npmignore', 'jsconfig.json'].forEach(function (path) {
         this.fs.copy(
           this.templatePath('_' + path),
           this.destinationPath(path)
@@ -97,9 +104,18 @@ module.exports = yeoman.generators.Base.extend({
 
     // Install Dependencies
     install: function () {
-      this.npmInstall([], {}, function () {
-        this.spawnCommand('typings', ['install', 'dt~node', '--global', '--save'])
-      }.bind(this));
+      
+      this.npmInstall([
+        'typescript',
+        'ava',
+        'coveralls',
+        'del',
+        'gulp',
+        'gulp-shell',
+        'nyc',
+        'yargs',
+        '@types/node'
+      ], { saveDev: true });
     }
   },
 });

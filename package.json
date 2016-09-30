@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "yeoman-generator": "^0.21.2"
+    "yeoman-generator": "^0.24.1"
   },
   "devDependencies": {
-    "typings": "^1.0.4"
+    "@types/yeoman-generator": "0.0.30"
   }
 }
