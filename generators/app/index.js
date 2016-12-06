@@ -69,7 +69,7 @@ module.exports = yeoman.Base.extend({
     // Copy the configuration files
     config: function () {
 
-      ['settings.json'].forEach(function (path) {
+      ['settings.json', 'tasks.json'].forEach(function (path) {
         this.fs.copy(
           this.templatePath(paths.vscode + '_' + path),
           this.destinationPath(paths.vscode + path)
@@ -88,16 +88,6 @@ module.exports = yeoman.Base.extend({
         this.fs.copy(
           this.templatePath('_' + path),
           this.destinationPath(path)
-        );
-      }.bind(this));
-    },
-
-    // Copy application files
-    app: function () {
-      ['index.ts', 'index.spec.ts'].forEach(function (path) {
-        this.fs.copy(
-          this.templatePath(paths.src + '_' + path),
-          this.destinationPath(paths.src + path)
         );
       }.bind(this));
     },
