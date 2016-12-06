@@ -1,11 +1,17 @@
 # <%= name %>
-Because thinking is hard.
 
-[![Build Status](https://travis-ci.org/<%= username %>/<%= name %>.svg?branch=master)](https://travis-ci.org/<%= username %>/<%= name %>)
-[![Coverage Status](https://coveralls.io/repos/github/<%= username %>/<%= name %>/badge.svg?branch=master)](https://coveralls.io/github/<%= username %>/<%= name %>?branch=master)
-[![NPM Dependencies](https://david-dm.org/<%= username %>/<%= name %>.svg)](https://david-dm.org/<%= username %>/<%= name %>)
+_Short Description_
 
-*Description*
+[![Build Status](https://img.shields.io/travis/<%= username %>/<%= name %>/master.svg?style=flat-square)](https://travis-ci.org/<%= username %>/<%= name %>)
+[![Code Coverage](https://img.shields.io/coveralls/<%= username %>/<%= name %>/master.svg?style=flat-square)](https://coveralls.io/github/<%= username %>/<%= name %>?branch=master)
+[![Dependencies](https://img.shields.io/david/<%= username %>/<%= name %>.svg?style=flat-square)](https://david-dm.org/<%= username %>/<%= name %>)
+[![DevDependencies](https://img.shields.io/david/dev/<%= username %>/<%= name %>.svg?style=flat-square)](https://david-dm.org/<%= username %>/<%= name %>?type=dev)
+[![npm](https://img.shields.io/npm/v/<%= name %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= name %>)
+[![Monthly Downloads](https://img.shields.io/npm/dm/<%= name %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= name %>)
+[![Total Downloads](https://img.shields.io/npm/dt/<%= name %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= name %>)
+
+
+*Long Description*
 
 
 ## Example:
