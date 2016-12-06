@@ -4,7 +4,7 @@
   "editor.insertSpaces": true,
 	"editor.formatOnType": true,
   "tslint.enable": true,
-  "typescript.tsdk": "./node_modules/.bin/tsc",
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "javascript.validate.lint.missingSemicolon": "error",
   "javascript.validate.lint.functionsInsideLoops": "warning",
   "javascript.validate.lint.unknownProperty": "warning",
