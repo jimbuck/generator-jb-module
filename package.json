@@ -1,6 +1,6 @@
 {
   "name": "generator-jb-module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A super easy to use generator for rapidly making high quality node modules with Typescript and AVA.",
   "license": "MIT",
   "preferGlobal": true,
