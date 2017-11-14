@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "<%- description %>",
   "main": "index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "gulp clean",
-    "rebuild": "gulp build",
+    "build": "gulp build",
     "watch": "gulp watch",
     "test": "gulp test",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
